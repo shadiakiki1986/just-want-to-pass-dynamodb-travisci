@@ -1,13 +1,14 @@
 <?php
 
-# To test with a different ROOT, uncomment the below
-# define("ROOT", "/home/ubuntu/Development/zboota-server"); // Development ROOT
-require_once dirname(__FILE__).'/../config.php';
 use Aws\DynamoDb\DynamoDbClient;
 
 class getitemTest extends PHPUnit_Framework_TestCase {
 
     public function testGet() {
+
+	if(!getenv('J2P_AWS_KEY')) throw new Exception("Please set environment variable J2P_AWS_KEY");
+	if(!getenv('J2P_AWS_SECRET')) throw new Exception("Please set environment variable J2P_AWS_SECRET");
+	if(!getenv('J2P_AWS_REGION')) throw new Exception("Please set environment variable J2P_AWS_REGION");
 
 	$client= DynamoDbClient::factory(array(
 	    'key' => getenv('J2P_AWS_KEY'), # check config file
@@ -15,10 +16,11 @@ class getitemTest extends PHPUnit_Framework_TestCase {
 	    'region'  => getenv('J2P_AWS_REGION')
 	));
 
-	$item=$zc->client->getItem(array(
+	$item=$client->getItem(array(
 	    'TableName' => 'zboota-users',
 	    'Key' => array( 'email'      => array('S' => "shadiakiki1986@yahoo.com") )
 	));
+	$item=$item['Item'];
 
 	$this->assertTrue(array_key_exists("email",$item));
 	$this->assertTrue(array_key_exists("pass",$item));
