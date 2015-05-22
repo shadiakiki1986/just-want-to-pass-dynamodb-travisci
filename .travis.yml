@@ -11,5 +11,5 @@ before_script:
 - composer install
 addons:
   ssh_known_hosts:
-  - https://dynamodb.us-east-1.amazonaws.com/
-  - https://dynamodb.us-west-2.amazonaws.com/
+  - dynamodb.us-east-1.amazonaws.com
+  - dynamodb.us-west-2.amazonaws.com
