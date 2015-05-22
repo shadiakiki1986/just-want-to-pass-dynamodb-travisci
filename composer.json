@@ -1,0 +1,16 @@
+{
+    "name":"shadiakiki1986/just-want-to-pass-dynamodb-travisci",
+    "description":"A project that's just supposed to pass travis-ci build. All this is is a dynamodb usage from php",
+    "type":"project",
+    "license":"WTFPL",
+    "authors":[
+        {
+            "name":"Shadi Akiki",
+            "email":"shadiakiki1986@gmail.com"
+        }
+    ],
+    "require":{
+        "php":">=5.3.5",
+        "aws/aws-sdk-php": ">=2.7.27"
+    }
+}
