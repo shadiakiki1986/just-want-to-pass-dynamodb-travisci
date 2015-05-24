@@ -43,7 +43,7 @@ class getitemTest extends PHPUnit_Framework_TestCase {
 	    'UpdateExpression' => 'SET lastLoginTs = :tnow'
 	));
     }
-
+/*
     public function testPutItem() {
 	$this->checkEnv();
 	$client=$this->ddbFactory();
@@ -51,7 +51,7 @@ class getitemTest extends PHPUnit_Framework_TestCase {
 	$client->putItem(array(
 	    'TableName' => 'zboota-users',
 	    'Item' => array(
-		'email' => array('S' => "whatever"),
+		'email' => array('S' => (string)rand(1000,9999)),
 		'pass'  => array('S' => "something else"),
 		'registrationDate' => array('S' => date("Y-m-d H:i:s")),
 		'lastloginDate' => array('S' => "-"),
@@ -60,5 +60,6 @@ class getitemTest extends PHPUnit_Framework_TestCase {
 	));
 
     }
+*/
 
 }
