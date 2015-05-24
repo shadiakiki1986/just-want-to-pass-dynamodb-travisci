@@ -44,4 +44,21 @@ class getitemTest extends PHPUnit_Framework_TestCase {
 	));
     }
 
+    public function testPutItem() {
+	$this->checkEnv();
+	$client=$this->ddbFactory();
+
+	$client->putItem(array(
+	    'TableName' => 'zboota-users',
+	    'Item' => array(
+		'email' => array('S' => "whatever"),
+		'pass'  => array('S' => "something else"),
+		'registrationDate' => array('S' => date("Y-m-d H:i:s")),
+		'lastloginDate' => array('S' => "-"),
+		'lpns' => array('S' => "{}")
+	    )
+	));
+
+    }
+
 }
