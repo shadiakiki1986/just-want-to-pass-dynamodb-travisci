@@ -11,6 +11,7 @@ class getitemTest extends PHPUnit_Framework_TestCase {
     }
 
     public function ddbFactory() {
+var_dump(curl_version());
 	return DynamoDbClient::factory(array(
 	    'key' => getenv('J2P_AWS_KEY'), # check config file
 	    'secret'  => getenv('J2P_AWS_SECRET'),
