@@ -33,7 +33,7 @@ var_dump(curl_version());
 	$this->assertTrue(array_key_exists("email",$item));
 	$this->assertTrue(array_key_exists("pass",$item));
     }
-
+/*
     public function testUpdateItem() {
 	$this->checkEnv();
 	$client=$this->ddbFactory();
@@ -63,6 +63,6 @@ var_dump(curl_version());
 	));
 
     }
-
+*/
 
 }
