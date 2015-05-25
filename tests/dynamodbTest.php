@@ -16,7 +16,7 @@ var_dump(curl_version());
 	    'key' => getenv('J2P_AWS_KEY'), # check config file
 	    'secret'  => getenv('J2P_AWS_SECRET'),
 	    'region'  => getenv('J2P_AWS_REGION'),
-    'curl.options' => [CURLOPT_VERBOSE => true, CURL_SSLVERSION=>CURL_SSLVERSION_SSLv3]
+    'curl.options' => [CURLOPT_VERBOSE => true, CURLOPT_SSLVERSION=>CURL_SSLVERSION_SSLv3]
 	));
     }
 
