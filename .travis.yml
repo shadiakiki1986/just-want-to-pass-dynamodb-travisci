@@ -1,5 +1,5 @@
 language: php
-php: 5.5
+php: 5.4
 env:
   global:
   - J2P_AWS_REGION="us-east-1"
@@ -9,13 +9,4 @@ sudo: false
 before_script:
 - composer self-update
 - composer install
-before_install:
-- cat ~/apt-get-update.log
-addons:
-  ssh_known_hosts:
-  - dynamodb.us-east-1.amazonaws.com
-  - dynamodb.us-west-2.amazonaws.com
-addons:
-  apt:
-    packages:
-    - libssl1.0.0
+
