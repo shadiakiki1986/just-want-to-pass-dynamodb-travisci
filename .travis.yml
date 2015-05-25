@@ -17,5 +17,5 @@ addons:
   apt:
     packages:
     - curl
-    - libcurl3
+    - libcurl3=7.35.0-1ubuntu2.5
     - php5-curl
