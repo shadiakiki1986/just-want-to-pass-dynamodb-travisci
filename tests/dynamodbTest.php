@@ -14,7 +14,8 @@ class getitemTest extends PHPUnit_Framework_TestCase {
 	return DynamoDbClient::factory(array(
 	    'key' => getenv('J2P_AWS_KEY'), # check config file
 	    'secret'  => getenv('J2P_AWS_SECRET'),
-	    'region'  => getenv('J2P_AWS_REGION')
+	    'region'  => getenv('J2P_AWS_REGION'),
+    'curl.options' => [CURLOPT_VERBOSE => true]
 	));
     }
 
