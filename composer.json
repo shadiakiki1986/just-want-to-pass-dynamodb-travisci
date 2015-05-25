@@ -18,7 +18,6 @@
         "symfony/http-kernel": "*",
         "guzzlehttp/guzzle": "*",
         "monolog/monolog": "*",
-        "doctrine/cache": "*",
-        "ext-apc": "*"
+        "doctrine/cache": "*"
     }
 }
