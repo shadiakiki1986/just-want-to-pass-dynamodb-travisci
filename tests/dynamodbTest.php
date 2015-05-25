@@ -46,7 +46,7 @@ var_dump(curl_version());
 	));
     }
 
-/*
+
     public function testPutItem() {
 	$this->checkEnv();
 	$client=$this->ddbFactory();
@@ -63,6 +63,6 @@ var_dump(curl_version());
 	));
 
     }
-*/
+
 
 }
