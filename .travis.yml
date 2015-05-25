@@ -13,3 +13,9 @@ addons:
   ssh_known_hosts:
   - dynamodb.us-east-1.amazonaws.com
   - dynamodb.us-west-2.amazonaws.com
+addons:
+  apt:
+    packages:
+    - curl
+    - libcurl3
+    - php5-curl
