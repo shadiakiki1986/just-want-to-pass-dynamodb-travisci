@@ -32,7 +32,7 @@ class getitemTest extends PHPUnit_Framework_TestCase {
 	$this->assertTrue(array_key_exists("pass",$item));
     }
 
-    public function testUpdateItem() {
+/*    public function testUpdateItem() {
 	$this->checkEnv();
 	$client=$this->ddbFactory();
 
@@ -43,6 +43,7 @@ class getitemTest extends PHPUnit_Framework_TestCase {
 	    'UpdateExpression' => 'SET lastLoginTs = :tnow'
 	));
     }
+*/
 /*
     public function testPutItem() {
 	$this->checkEnv();
