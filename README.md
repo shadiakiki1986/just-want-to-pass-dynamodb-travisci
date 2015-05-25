@@ -14,3 +14,11 @@ To encrypt env vars in .travis.yml
 gem install travis
 travis encrypt 'SOMEVAR=secretvalue' (no need for double quotes around secretvalue)
 '''
+
+To add git branches
+'''
+git branch lastsuccess asdfhaksjrfhuihwer8923489234uih23i4h
+git push origin lastsuccess
+git branch -D lastsuccess
+git push origin --delete lastsuccess
+'''

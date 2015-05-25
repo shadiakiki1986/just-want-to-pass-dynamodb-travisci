@@ -11,6 +11,14 @@
     ],
     "require":{
         "php":">=5.3.5",
-        "aws/aws-sdk-php": ">=2.7.27"
+        "aws/aws-sdk-php": ">=2.7.27",
+         "monolog/monolog": "*",
+        "symfony/dependency-injection": "*",
+        "symfony/yaml": "*",
+        "symfony/http-kernel": "*",
+        "guzzlehttp/guzzle": "*",
+        "monolog/monolog": "*",
+        "doctrine/cache": "*",
+        "ext-apc": "*"
     }
 }
