@@ -8,6 +8,7 @@ env:
 sudo: false
 before_script:
 - apt-get -V -s install curl
+- cat /etc/apt/sources.list
 - composer self-update
 - composer install
 
