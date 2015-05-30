@@ -1,5 +1,5 @@
 language: php
-php: 5.5.20
+php: 5.5
 env:
   global:
   - J2P_AWS_REGION="us-east-1"
@@ -11,6 +11,7 @@ before_script:
 - dpkg -l|grep 7\.22 || echo "None"
 - dpkg -s libcurl3
 - echo '<?php phpinfo(); ?>' | php 2>&1 |grep -i ssl
+- sudo apt-get remove libcurl3-gnutls
 - sudo bash updateCurlOnUbuntu12.04.sh
 - curl --version
 - dpkg -l|grep 7\.22 || echo "None"
