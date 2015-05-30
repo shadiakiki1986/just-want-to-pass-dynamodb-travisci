@@ -12,7 +12,8 @@ before_script:
 - sudo cp /tmp/myppa.list /etc/apt/sources.list.d/
 - rm /tmp/myppa.list
 - sudo apt-get update
-- sudo apt-get -V install libc6 libcurl3 curl
+- sudo apt-get -V build-dep curl
+- sudo apt-get -V install curl
 - curl --version
 - composer self-update
 - composer install
