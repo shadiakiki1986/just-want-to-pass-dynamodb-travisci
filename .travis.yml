@@ -1,5 +1,5 @@
 language: php
-php: 5.5
+php: 5.5.20
 env:
   global:
   - J2P_AWS_REGION="us-east-1"
