@@ -13,9 +13,6 @@ before_script:
 - echo '<?php phpinfo(); ?>' | php 2>&1 |grep -i ssl
 - pkg-config --modversion gnutls
 - sudo bash updateCurlOnUbuntu12.04.sh
-- sudo ls /usr/lib/x86_64-linux-gnu/libgnutls*
-- sudo rm /usr/lib/x86_64-linux-gnu/libgnutls.so
-- sudo ln -s /usr/lib/x86_64-linux-gnu/libgnutls.so.28.5.1 /usr/lib/x86_64-linux-gnu/libgnutls.so
 - curl --version
 - dpkg -l|grep 7\.22 || echo "None"
 - dpkg -s libcurl3
@@ -24,4 +21,7 @@ before_script:
 - pkg-config --modversion gnutls
 - composer self-update
 - composer install
-
+cache:
+  directories:
+  - $HOME/gnutls-3.1.28
+  - $HOME/nettle-2.7.1
