@@ -11,6 +11,7 @@ before_script:
 - dpkg -l|grep 7\.22 || echo "None"
 - dpkg -s libcurl3
 - echo '<?php phpinfo(); ?>' | php 2>&1 |grep -i ssl
+- pkg-config --modversion gnutls
 - sudo bash updateCurlOnUbuntu12.04.sh
 - sudo ls /usr/lib/x86_64-linux-gnu/libgnutls*
 - sudo rm /usr/lib/x86_64-linux-gnu/libgnutls.so
@@ -20,6 +21,7 @@ before_script:
 - dpkg -s libcurl3
 - dpkg -s php5-curl
 - echo '<?php phpinfo(); ?>' | php |grep -i ssl
+- pkg-config --modversion gnutls
 - composer self-update
 - composer install
 
