@@ -8,10 +8,10 @@ env:
 sudo: required
 before_script:
 - curl --version
-- dpkg -l|grep 7\.22
+- dpkg -l|grep 7\.22 || echo "None"
 - sudo bash updateCurlOnUbuntu12.04.sh
 - curl --version
-- dpkg -l|grep 7\.22
+- dpkg -l|grep 7\.22 || echo "None"
 - composer self-update
 - composer install
 
