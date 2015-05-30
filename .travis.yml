@@ -10,10 +10,12 @@ before_script:
 - curl --version
 - dpkg -l|grep 7\.22 || echo "None"
 - dpkg -s libcurl3
+- dpkg -s php5-curl
 - sudo bash updateCurlOnUbuntu12.04.sh
 - curl --version
 - dpkg -l|grep 7\.22 || echo "None"
 - dpkg -s libcurl3
+- dpkg -s php5-curl
 - composer self-update
 - composer install
 
