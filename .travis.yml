@@ -10,12 +10,13 @@ before_script:
 - curl --version
 - dpkg -l|grep 7\.22 || echo "None"
 - dpkg -s libcurl3
-- dpkg -s php5-curl
+- echo '<?php phpinfo(); ?>' | php 2>&1 |grep -i ssl
 - sudo bash updateCurlOnUbuntu12.04.sh
 - curl --version
 - dpkg -l|grep 7\.22 || echo "None"
 - dpkg -s libcurl3
 - dpkg -s php5-curl
+- echo '<?php phpinfo(); ?>' | php 2>&1 |grep -i ssl
 - composer self-update
 - composer install
 
