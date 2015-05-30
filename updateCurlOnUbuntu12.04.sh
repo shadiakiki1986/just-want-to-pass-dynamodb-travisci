@@ -10,8 +10,8 @@ if [ `lsb_release -a|grep Release|awk '{print $2}'` == '12.04' ]; then
 	sudo cp /tmp/myppa.list /etc/apt/sources.list.d/
 	rm /tmp/myppa.list
 	sudo apt-get update
-	sudo apt-get -V build-dep curl libc6 libcurl3 php5-curl apache2
-	sudo apt-get -V install curl libc6 libcurl3 php5-curl apache2
+	sudo apt-get -V build-dep curl libc6 libcurl3 php5-curl apache2 libgnutls28
+	sudo apt-get -V install curl libc6 libcurl3 php5-curl apache2 libgnutls28
 else
 	echo "This script was only meant to run on Ubuntu 12.04";
 fi
