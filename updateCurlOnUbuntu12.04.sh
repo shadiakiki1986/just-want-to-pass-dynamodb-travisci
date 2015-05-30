@@ -10,8 +10,8 @@ if [ `lsb_release -a|grep Release|awk '{print $2}'` == '12.04' ]; then
 	sudo cp /tmp/myppa.list /etc/apt/sources.list.d/
 	rm /tmp/myppa.list
 	sudo apt-get update
-	sudo apt-get -V build-dep curl libc6 libcurl3 libcurl3-gnutls php5-curl apache2 libgnutls28 libcurl4-gnutls-dev
-	sudo apt-get -V install curl libc6 libcurl3 libcurl3-gnutls php5-curl apache2 libgnutls28 libcurl4-gnutls-dev
+	sudo apt-get -V build-dep curl libc6 libcurl3 libcurl3-gnutls php5-curl apache2 libcurl4-gnutls-dev
+	sudo apt-get -V install curl libc6 libcurl3 libcurl3-gnutls php5-curl apache2 libcurl4-gnutls-dev
 
 	# download and build from source: gnutls
 	# or already done and cached
@@ -22,7 +22,7 @@ if [ `lsb_release -a|grep Release|awk '{print $2}'` == '12.04' ]; then
 			exit 1
 		fi
 	else
-		sudo apt-get install libgpm-dev autogen pkg-config
+		sudo apt-get install libgmp-dev autogen pkg-config make m4
 
 		# nettle .. 2.7.1 is the specific version that gnutls 3.1 requires
 		wget ftp://ftp.gnu.org/gnu/nettle/nettle-2.7.1.tar.gz
