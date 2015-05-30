@@ -16,9 +16,7 @@ if [ `lsb_release -a|grep Release|awk '{print $2}'` == '12.04' ]; then
 	# download and build from source: gnutls
 	# or already done and cached
 	if [ -f /usr/local/lib/libgnutls.so ]; then 
-		if [ `pkg-config --modversion gnutls`=="3.1.28" ]; then
-			# do nothing
-		else
+		if [ `pkg-config --modversion gnutls`!="3.1.28" ]; then
 			echo "Eventhough libgnutls.so is in /usr/local/lib, it is not version 3.1.28. Aborting"
 			exit 1
 		fi
