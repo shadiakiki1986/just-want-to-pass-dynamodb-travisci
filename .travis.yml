@@ -14,7 +14,7 @@ before_script:
 - dpkg -l|grep 7\.22 || echo "None"
 - dpkg -s libcurl3
 - sudo apt-get remove libgnutls26
-- echo '<?php phpinfo(); ?>' | php 2>&1 |grep -i ssl
+- echo '<?php phpinfo(); ?>' | php |grep -i ssl
 - echo '<?php var_dump(curl_version()); ?>' | php 
 - exit 1
 - pkg-config --modversion gnutls
