@@ -7,15 +7,17 @@ env:
   - secure: UywEg4OoFXAsE7WItCid2PbKpMplJb0T2yWg4q+6gZkCurTwNb3rKzm8lleweomIEdq/h+oSthnksMkoyeCGkSwasGZbqu1TKS+FpOsEWauf8LRFLrSRy47LmMlPUTaOXQRYbE6uMgkLFRhvK5Wi4UED88lZSfLISMYPFQT1ekfKFlTZMT6B4afpxQgLknNNFh1i5JhR9+iWaQAD9KHekQ1YThf9Z6ZjdEBur2EBtcq7l5GFoL/sv7o1N0bXzOlTxvj1mnUwwfYmiEYgSwpmesq7PzVKadFtsPmxxlSRLAJR+g9M/aYVtxS/ZfP3TQyok/WKxnKnm7zPj/K4A3umTpS4Ptx8qal+uJPXyMem1wlIMM1BhJBeLrUo/a7NmBYFtqYj7KeREDbqP0h+14oLj44SYNTlxp58SI19hFLsOdEoMIBHJdXVQaLQvPgJklzsYMfSQBeZFCT3A03rzWEVVyZntUCb1FDZ5Rcsi3/tUDskqUPnINh8f1DsLLkAypG6Ko9Nxwwm/KAi22M4vaVYzdlT5CbmYhW5X9R/Z5sLzH5NJqd4b6Jwyw6SBp1Q55EwfLP4Bss9f963UyFTk4wYdgGjayKTHj8jUjUBgrFaVytqTk4L9C/iIOiDXTBgB1hdby/veDUkU9fIabr4T42ip08cYlp9waDTohV8G4RvwtQ=
 sudo: required
 before_script:
+- if [ -d $HOME/ToBeCached ]; then sudo cp $HOME/ToBeCached/usr/local/lib/*  /usr/local/lib; fi
 - ls -al /usr/local/lib
 - ls -al /usr/lib/x86_64-linux-gnu/libgnutls*
 - curl --version
 - dpkg -l|grep 7\.22 || echo "None"
 - dpkg -s libcurl3
+- sudo apt-get remove libgnutls26
 - echo '<?php phpinfo(); ?>' | php 2>&1 |grep -i ssl
 - echo '<?php var_dump(curl_version()); ?>' | php 
+- exit 1
 - pkg-config --modversion gnutls
-- dpkg -s libgnutls26
 - sudo bash updateCurlOnUbuntu12.04.sh
 - curl --version
 - dpkg -l|grep 7\.22 || echo "None"
@@ -24,16 +26,20 @@ before_script:
 - echo '<?php phpinfo(); ?>' | php |grep -i ssl
 - echo '<?php var_dump(curl_version()); ?>' | php 
 - pkg-config --modversion gnutls
-- dpkg -s libgnutls26
 - sudo rm /usr/lib/x86_64-linux-gnu/libgnutls.so
 - sudo ln -s /usr/local/lib/libgnutls.so.28.21.8 /usr/lib/x86_64-linux-gnu/libgnutls.so
-- dpkg -s libgnutls26
+- sudo rm /usr/lib/x86_64-linux-gnu/libgnutls-openssl.so
+- sudo ln -s /usr/local/lib/libgnutls-openssl.so.27.0.2 /usr/lib/x86_64-linux-gnu/libgnutls-openssl.so
+- sudo rm /usr/lib/x86_64-linux-gnu/libgnutls-openssl.a
+- sudo cp /usr/local/lib/libgnutls-openssl.a /usr/lib/x86_64-linux-gnu/libgnutls-openssl.a
 - echo '<?php phpinfo(); ?>' | php |grep -i ssl
 - echo '<?php var_dump(curl_version()); ?>' | php 
 - composer self-update
 - composer install
 - ls -al /usr/local/lib
 - ls -al /usr/lib/x86_64-linux-gnu/libgnutls*
+- mkdir -p $HOME/ToBeCached/usr/local/lib
+- cp /usr/local/lib/libgnutls* /usr/local/lib/libnettle* /usr/local/lib/libhogweed* $HOME/ToBeCached/usr/local/lib
 cache:
   directories:
-  - /usr/local/lib
+  - $HOME/ToBeCached
