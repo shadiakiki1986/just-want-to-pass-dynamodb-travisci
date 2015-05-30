@@ -14,7 +14,7 @@ before_script:
 - sudo bash updateCurlOnUbuntu12.04.sh
 - sudo ls /usr/lib/x86_64-linux-gnu/libgnutls*
 - sudo rm /usr/lib/x86_64-linux-gnu/libgnutls.so
-- sudo ln -s /usr/lib/x86_64-linux-gnu/libgnutls.so /usr/lib/x86_64-linux-gnu/libgnutls.so.28.5.1
+- sudo ln -s /usr/lib/x86_64-linux-gnu/libgnutls.so.28.5.1 /usr/lib/x86_64-linux-gnu/libgnutls.so
 - curl --version
 - dpkg -l|grep 7\.22 || echo "None"
 - dpkg -s libcurl3
