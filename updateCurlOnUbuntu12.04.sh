@@ -9,6 +9,6 @@ echo 'deb http://security.ubuntu.com/ubuntu trusty-updates main' >> /tmp/myppa.l
 sudo cp /tmp/myppa.list /etc/apt/sources.list.d/
 rm /tmp/myppa.list
 sudo apt-get update
-sudo apt-get -V build-dep curl libc6 libcurl3 apache2.2-common php5-curl apache2.2-bin
-sudo apt-get -V install curl libc6 libcurl3 apache2.2-common php5-curl apache2.2-bin
+sudo apt-get -V build-dep curl libc6 libcurl3 apache2.2-common php5-curl apache2.2-bin apache2-bin
+sudo apt-get -V install curl libc6 libcurl3 apache2.2-common php5-curl apache2.2-bin apache2-bin
 
