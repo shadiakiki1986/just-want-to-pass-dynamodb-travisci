@@ -22,6 +22,7 @@ before_script:
 - pkg-config --modversion gnutls
 - composer self-update
 - composer install
+- ls /usr/local/lib
 cache:
   directories:
   - /usr/local/lib
