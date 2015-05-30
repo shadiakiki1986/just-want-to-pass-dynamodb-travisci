@@ -13,7 +13,7 @@ before_script:
 - curl --version
 - dpkg -l|grep 7\.22 || echo "None"
 - dpkg -s libcurl3
-- sudo rm /usr/lib/x86_64-linux-gnu/libgnutls.so /usr/lib/x86_64-linux-gnu/libgnutls-openssl27.so
+- sudo rm /usr/lib/x86_64-linux-gnu/libgnutls.so /usr/lib/x86_64-linux-gnu/libgnutls-openssl.so
 - echo '<?php phpinfo(); ?>' | php |grep -i ssl
 - echo '<?php var_dump(curl_version()); ?>' | php 
 - exit 1
