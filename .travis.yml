@@ -9,9 +9,9 @@ sudo: required
 before_script:
 - curl --version
 - dpkg -l|grep 7\.22
-- exit
 - sudo bash updateCurlOnUbuntu12.04.sh
 - curl --version
+- dpkg -l|grep 7\.22
 - composer self-update
 - composer install
 
