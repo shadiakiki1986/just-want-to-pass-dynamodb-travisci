@@ -9,15 +9,18 @@ In a nutshell, it turned out that I needed to use GnuTLS 3.1.28 instead of 2.12.
 
 # Some dev notes for myself
 To check .travis.yml
+
     sudo apt-get install ruby rubygems
     gem install travis-lint
     travis-lint
 
 To encrypt env vars in .travis.yml
+
     gem install travis
     travis encrypt 'SOMEVAR=secretvalue' (no need for double quotes around secretvalue)
 
 To add git branches
+
     git branch lastsuccess asdfhaksjrfhuihwer8923489234uih23i4h
     git push origin lastsuccess
     git branch -D lastsuccess
