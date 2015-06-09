@@ -2,8 +2,9 @@
 
 class curlTest extends PHPUnit_Framework_TestCase {
 
-    public function testVersion735() {
-		$this->assertTrue(curl_version()['version']=='7.35.0');
+    public function testVersion() {
+		$cv=curl_version();
+		$this->assertTrue($cv['version']=='7.42.1');
     }
 
 }
